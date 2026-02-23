@@ -6,6 +6,9 @@
 
 Book Mate is a client-side React application that displays a collection of books, allows reading book details, adding to a wishlist and readlist. It uses a simple JSON data source bundled in the repo for demo purposes.
 
+## Live Link
+https://book-mate-react.netlify.app/
+
 ## Features
 
 - Browse books list and view details
