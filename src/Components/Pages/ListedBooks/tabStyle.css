@@ -1,0 +1,77 @@
+:root {
+  /* Light Mode Variables */
+  --tabs-border: #aaa;
+  --tabs-bg: #fff;
+  --tabs-text: #000;
+  --tabs-disabled: GrayText;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Dark Mode Variables */
+    --tabs-border: #444;
+    --tabs-bg: #1a1a1a;
+    --tabs-text: #f0f0f0;
+    --tabs-disabled: #666;
+  }
+}
+
+.react-tabs {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.react-tabs__tab-list {
+  /* Use the border variable */
+  border-bottom: 1px solid var(--tabs-border);
+  margin: 0 0 10px;
+  padding: 0;
+}
+
+.react-tabs__tab {
+  display: inline-block;
+  border: 1px solid transparent;
+  border-bottom: none;
+  bottom: -1px;
+  position: relative;
+  list-style: none;
+  padding: 6px 12px;
+  cursor: pointer;
+  /* Ensure text color adapts */
+  color: var(--tabs-text);
+}
+
+.react-tabs__tab--selected {
+  background: var(--tabs-bg);
+  border-color: var(--tabs-border);
+  color: var(--tabs-text);
+  border-radius: 5px 5px 0 0;
+}
+
+.react-tabs__tab--disabled {
+  color: var(--tabs-disabled);
+  cursor: default;
+}
+
+.react-tabs__tab:focus {
+  outline: none;
+}
+
+.react-tabs__tab:focus:after {
+  content: '';
+  position: absolute;
+  height: 5px;
+  left: -4px;
+  right: -4px;
+  bottom: -5px;
+  /* Matches the background to hide the bottom border on focus */
+  background: var(--tabs-bg);
+}
+
+.react-tabs__tab-panel {
+  display: none;
+  color: var(--tabs-text);
+}
+
+.react-tabs__tab-panel--selected {
+  display: block;
+}
